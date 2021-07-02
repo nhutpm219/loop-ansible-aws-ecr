@@ -1,0 +1,3 @@
+ecr_repo_list:
+  - "cate01/pod01"
+  - "cate02/pod02"
