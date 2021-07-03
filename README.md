@@ -10,5 +10,7 @@ This is repository which is Ansible loop value for create multiple ECR
 
 ####Install if have problem with boto3 and botocore    
 python3 -m pip install --user --upgrade pip
+
 python3 -m pip install ansible boto3 botocore
 
+#### Use with_dict to loop
