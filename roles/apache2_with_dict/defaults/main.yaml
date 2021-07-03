@@ -7,3 +7,19 @@ sites: #this is item
   app2: #this is key
     image: mysql-server #this is value
     repo: present #this is value
+
+
+#################################################
+
+
+sites:
+  app1:
+    image: "{{ image1 }}"
+    repo: "{{ repo }}"
+  app2:
+    image: "{{ image2 }}"
+    repo: "{{ repo }}"
+
+image1: nginx
+image2: mysql-server
+repo: present
