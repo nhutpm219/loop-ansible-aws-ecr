@@ -1,0 +1,9 @@
+---
+# defaults file for apache2
+sites: #this is item
+  app1: #this is key, with_dict will loop base on this
+    image: nginx #this is value
+    repo: present #this is value
+  app2: #this is key
+    image: mysql-server #this is value
+    repo: present #this is value
