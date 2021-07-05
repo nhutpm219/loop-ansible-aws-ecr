@@ -14,3 +14,9 @@ python3 -m pip install --user --upgrade pip
 python3 -m pip install ansible boto3 botocore
 
 #### Use with_dict to loop
+
+#### If you get error Failed to import the required Python library (botocore or boto3) on NguyenLeSCC1c.mylabserver.com's Python /usr/bin/python2
+- name: install pip2 dependencies
+  pip:
+    name: ['boto3', 'botocore']
+    executable: /usr/bin/pip2
