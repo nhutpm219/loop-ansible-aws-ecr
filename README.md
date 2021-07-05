@@ -26,3 +26,8 @@ python3 -m pip install ansible boto3 botocore
       
       
 ####Upload Docker Image to ECR
+aws ecr get-login-password --region us-east-1| docker login --username AWS --password-stdin 108131037450.dkr.ecr.us-east-1.amazonaws.com
+
+docker tag redis:latest 108131037450.dkr.ecr.us-east-1.amazonaws.com/helloworlds
+
+docker push 108131037450.dkr.ecr.us-east-1.amazonaws.com/helloworlds
