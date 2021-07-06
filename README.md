@@ -1,6 +1,14 @@
 # loop-ansible-aws-ecr
 This is repository which is Ansible loop value for create multiple ECR
 
+- Create private ECR repository
+
+- Pull image from docker.io, k8s.gcr.io, quay.io, registry.gitlab.com
+
+- Tag image for ready to push to ECR repository
+
+- Push image to ECR repository
+
 
 ![image](https://user-images.githubusercontent.com/70093183/124305489-04237f80-db1a-11eb-82d3-c8609abb5570.png)
             
