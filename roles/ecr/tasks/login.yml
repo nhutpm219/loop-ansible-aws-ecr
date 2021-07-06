@@ -1,0 +1,21 @@
+- name: Get the current caller identity information
+  amazon.aws.aws_caller_info:
+  register: caller_info
+- name: install pip2 dependencies
+  pip:
+    name: ['boto3', 'botocore']
+    executable: /usr/bin/pip2
+- name: "Login to AWS ECR"
+  shell: "aws ecr get-login-password --region {{aws_region}} | docker login --username AWS --password-stdin {{caller_info.account}}.dkr.ecr.{{aws_region}}.amazonaws.com"
+  register: login_result
+
+- name: Push all image to ECR
+  include_role: 
+    name: ecr
+    tasks_from: pullpush.yml
+  vars:
+    var_image: "{{ item.image }}"
+    var_tag: "{{ item.tag }}"
+    var_repo_ecr: "{{ item.repo_ecr }}"
+  with_items:
+    - "{{ repo_image_oss_list }}" 
