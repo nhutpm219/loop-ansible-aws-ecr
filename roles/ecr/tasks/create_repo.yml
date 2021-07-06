@@ -1,0 +1,16 @@
+#- name: install pip2 dependencies
+#  pip:
+#    name: ['boto3', 'botocore']
+#    executable: /usr/bin/pip2
+#- name: Install boto3 and botocore on remote
+#  pip:
+#    name: ["boto3", "botocore"]
+#    executable: /usr/bin/pip3
+#    extra_args: "--user"
+
+- name: "INFO:: Create ECR Repository for ITOI"
+  community.aws.ecs_ecr:
+    state: present
+    name: "{{ item.repo_ecr }}"
+  with_items: 
+    - "{{ repo_image_oss_list }}"
