@@ -1,6 +1,2 @@
-- name: Create
-  community.aws.ecs_ecr:
-    state: present
-    name: "{{ item }}"
-  with_items:
-    - "{{ ecr_repo_list }}"
+- include_tasks: create_repo.yml
+- include_tasks: login.yml
