@@ -8,14 +8,15 @@
 #      with_dict:
 #        - "{{ docker_list }}"
 #      register: tag_result
-- name: "Pull image from Docker.io"
+- name: "Pull image from {{var_image}}"
   command: "docker pull {{var_image}}:{{var_tag}}"
   register: load_result
   
-- name: Tag image {{loaded_image}} to ECR {{appName.repository.repositoryName}}
-  command: "docker tag {{var_image}}:{{var_tag}} {{caller_info.account}}.dkr.ecr.{{aws_region}}.amazonaws.com/{{item.repo_ecr}}:{{var_tag}}"
+- name: "Tag image {{var_image}}"
+  command: "docker tag {{var_image}}:{{var_tag}} {{caller_info.account}}.dkr.ecr.us-east-1.amazonaws.com/{{item.repo_ecr}}:{{var_tag}}"
   register: tag_result
 
-- name: Push image {{loaded_image}} to ECR {{appName.repository.repositoryName}}
-  command: "docker push {{caller_info.account}}.dkr.ecr.{{aws_region}}.amazonaws.com/{{item.repo_ecr}}:{{var_tag}}"
+- name: "Push image {{var_image}} to ECR {{var_repo_ecr}}"
+  command: "docker push {{caller_info.account}}.dkr.ecr.us-east-1.amazonaws.com/{{var_repo_ecr}}:{{var_tag}}"
   register: push_result
+
