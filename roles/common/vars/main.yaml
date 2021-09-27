@@ -2,10 +2,10 @@
 # vars file for common
 aws_region: us-east-1
 repo_image_oss_list:
-  - {image: "bitnami/external-dns",tag: "0.7.6-debian-10-r63", repo_ecr: "dx-tool/dxtool"}
-  - {image: "busybox",tag: "latest", repo_ecr: "dx-tool/dxtool"}
-  - {image: "stackstorm/st2auth",tag: "3.4.0", repo_ecr: "dx-tool/dxtool"}
-  - {image: "rotheross/otobo",tag: "rel-10_0_10", repo_ecr: "dx-tool/dxtool"}
-  - {image: "quay.io/eclipse/che-server",tag: "7.29.0", repo_ecr: "dx-tool/dxtool"}
-  - {image: "quay.io/eclipse/che-plugin-registry",tag: "7.29.0", repo_ecr: "dx-tool/dxtool"}
-  - {image: "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner",tag: "v4.0.2", repo_ecr: "dx-tool/dxtool"}
+  - {image: "bitnami/external-dns",tag: "0.7.6-debian-10-r63", repo_ecr: "aaabbbccc"}
+  - {image: "busybox",tag: "latest", repo_ecr: "aaabbbccc"}
+  - {image: "stackstorm/st2auth",tag: "3.4.0", repo_ecr: "aaabbbccc"}
+  - {image: "rotheross/otobo",tag: "rel-10_0_10", repo_ecr: "aaabbbccc"}
+  - {image: "quay.io/eclipse/che-server",tag: "7.29.0", repo_ecr: "aaabbbccc"}
+  - {image: "quay.io/eclipse/che-plugin-registry",tag: "7.29.0", repo_ecr: "aaabbbccc"}
+  - {image: "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner",tag: "v4.0.2", repo_ecr: "aaabbbccc"}
